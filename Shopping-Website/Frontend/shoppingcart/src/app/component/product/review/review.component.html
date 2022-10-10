@@ -1,0 +1,83 @@
+
+<div class="row" style="margin-top: 50px;">
+  <div class="col-sm-2" >
+       <div class="row" style="padding: 0px;">
+            <div class="col-md-10">
+                  <a href="Javascript.void(0)" (click)="filterReviews(5)" routerLink="/review/{{pid}}">
+                    <img src="../../../assets/images/5star.png" style="width: 100%;">
+                  </a>
+                  <br />
+                  <a href="Javascript.void(0)" (click)="filterReviews(4)" routerLink="/review/{{pid}}">
+                    <img src="../../../assets/images/4star.png"  style="width: 100%;">
+                  </a>
+                    <br />
+                  <a href="Javascript.void(0)" (click)="filterReviews(3)" routerLink="/review/{{pid}}">
+                    <img src="../../../assets/images/3star.png"  style="width: 100%;">
+                  </a>
+                  <br />
+                  <a href="Javascript.void(0)" (click)="filterReviews(2)" routerLink="/review/{{pid}}">
+                    <img src="../../../assets/images/2star.png"  style="width: 100%;">
+                  </a>
+                    <br />
+                  <a href="Javascript.void(0)" (click)="filterReviews(1)" routerLink="/review/{{pid}}">
+                    <img src="../../../assets/images/1star.png"  style="width: 100%;">
+                  </a>
+            </div>
+            <div class="col-sm-2">
+                 <span class="star1">{{this.starNums[0]}}</span> <br />
+                 <span class="star2">{{this.starNums[1]}}</span> <br />
+                 <span class="star3">{{this.starNums[2]}}</span> <br />
+                 <span class="star4">{{this.starNums[3]}}</span> <br />
+                 <span class="star5">{{this.starNums[4]}}</span>
+            </div>
+       </div>
+
+       <div class="row mt-4">
+        <div class="col-lg-12" align="center">
+          <a href="Javascript.void(0)" (click)="showAllReviews()" routerLink="/review/{{pid}}">All Reviews</a>
+        </div>
+        <div class="col-lg-12" align="center">
+          <a href="Javascript.void(0)" (click)="postReview()" routerLink="/review/{{pid}}">Post Review</a>
+        </div>
+       </div>
+  </div>
+  <div class="col-md-10">
+     <div class="row" *ngIf="showReviewForm">
+        <div class="col-md-12">
+            <div class="card">
+              <div class="card-header">
+                Post Review
+              </div>
+              <div class="card-body">
+                <form [formGroup]="reviewForm" (submit)="onPostReview()">
+                <label for="exampleFormControlTextarea1" class="form-label">Please write your review about the product</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" formControlName="reviewText"></textarea>
+                <br />
+                <label>Rating({{reviewForm.value.rating}}):</label>
+                <br />
+                1<input type="range" step="1" min=1 max=5 formControlName="rating" >5
+                <br /><br />
+                <input type="submit" value="post review" >
+              </form>
+              </div>
+            </div>
+        </div>
+        <div class="col-md-0">
+
+        </div>
+     </div>
+
+    <div class="row">
+          <div class="col-lg-12" *ngFor="let r of reviewArry">
+                {{r.reviewText}} <br />
+                Rating: {{r.rating}} <br />
+                 <span *ngIf="r?.username"> Posted by: {{r.username}} </span>
+                 <br />
+
+                 <button class="btn btn-danger btn-sm" *ngIf="r.username === username" (click)="onReviewDelete(r.id)">delete</button>
+                <hr />
+          </div>
+
+     </div>
+</div>
+</div>

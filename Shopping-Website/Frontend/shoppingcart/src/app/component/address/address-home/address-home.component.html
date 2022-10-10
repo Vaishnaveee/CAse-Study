@@ -1,0 +1,84 @@
+
+<div class="row mt-3 mx-3" style="margin-top:25px ;">
+    <div class="col-md-3">
+      <div style="margin-top: 50px; margin-left: 10px;" class="text-center">
+        <i id="animationDemo" data-mdb-animation="slide-right" data-mdb-toggle="animation"
+          data-mdb-animation-reset="true" data-mdb-animation-start="onScroll"
+          data-mdb-animation-on-scroll="repeat" class="fas fa-3x fa-shipping-fast text-white"></i>
+        <h3 class="mt-3 text-white">Welcome</h3>
+        <p class="white-text">You are 30 seconds away from compleating your order!</p>
+      </div>
+      <div class="text-center">
+        <button type="submit" class="btn btn-white btn-rounded back-button">Go back</button>
+      </div>
+  
+  
+    </div>
+    <div class="col-md-9 justify-content-center">
+      <div class="card card-custom pb-4">
+        <div class="card-body mt-0 mx-5">
+          <div class="text-center mb-3 pb-2 mt-3">
+            <h4 style="color: #495057 ;">Delivery Details</h4>
+          </div>
+         
+          <form class="mb-0" [formGroup]="addressForm"   (submit)="onFormSubmit()" >
+  
+            <div class="row mb-4">
+              <div class="col">
+                <div class="form-outline">
+                  <input type="text" id="fullName" name="fullName" class="form-control input-custom" required formControlName="fullName" />
+                  <label class="form-label" for="fullName">Full Name</label>
+                </div>
+              </div>
+              <div class="col">
+                <div class="form-outline">
+                  <input type="text" id="mobNo" name="mobNo" class="form-control input-custom" required formControlName="mobNo" />
+                  <label class="form-label" for="mobNo">Mobile Number</label>
+                </div>
+              </div>
+            </div>
+            <div class="row mb-4">
+              <div class="col">
+                <div class="form-outline">
+                  <input type="text" id="city" name="city" class="form-control input-custom" required formControlName="city"/>
+                  <label class="form-label" for="city">City</label>
+                </div>
+              </div>
+              <div class="col">
+                <div class="form-outline">
+                  <input type="number" id="pincode" name="pincode" class="form-control input-custom" required formControlName="pincode"/>
+                  <label class="form-label" for="pincode">Pincode</label>
+                </div>
+              </div>
+            </div>
+            <div class="row mb-4">
+              <div class="col">
+                <div class="form-outline">
+                  <input type="text" id="flatNo" name="flatNo" class="form-control input-custom" required formControlName="flatNo" />
+                  <label class="form-label" for="flatNo">Flat no.</label>
+                </div>
+              </div>
+              <div class="col">
+                <div class="form-outline">
+                  <input type="state" id="state" name = "state" class="form-control input-custom" required formControlName="state" />
+                  <label class="form-label" for="state">State</label>
+                </div>
+              </div>
+            </div>
+  
+            <div class="float-end ">
+              <!-- Submit button -->
+              <input type="submit"  name="submit" value="Place order" class="btn btn-primary btn-rounded"  
+                style="background-color: #0062CC ;"> 
+                <!-- <button type="submit" class="btn btn-primary btn-rounded"  routerLink="/addorder" ></button> -->
+            </div>
+  
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- routerLink="/addorder" -->
+  

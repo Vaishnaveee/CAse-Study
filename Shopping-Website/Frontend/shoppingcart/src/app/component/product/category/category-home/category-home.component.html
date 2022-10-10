@@ -1,0 +1,42 @@
+<header class="banner">
+    <h1></h1>
+  </header>
+
+  <div class="jumbotron bg-cover" style="background-image: linear-gradient(to bottom, rgba(255,255,255,0.6) 0%,rgba(255,255,255,0.9) 100%), url(../../../../../assets/images/sb.jpg)">
+  <div class="alert alert-primary" role="alert" *ngIf="errorMsg">
+    {{errorMsg}}
+  </div>
+
+  <div class="card-group">
+     <div class="col-sm-4" *ngFor="let c of categories">
+      <div *ngIf="c.id==1"class="container mx-auto mt-3">
+     <div class="card" style="width: 18rem;">
+      <img src="../../../../../assets/images/wo.jpg" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h4 class="card-title"><strong>{{c.name}}</strong></h4>
+        <p class="card-text">ALL NEW BRANDS</p>
+        <a href="Javascript.void(0)" routerLink="/product/{{c.id}}" class="card-link">View All Products</a>
+      </div>
+    </div>    </div>
+     
+       <div *ngIf="c.id==2"class="container mx-auto mt-1">
+      <div class="card" style="width: 18rem;">
+       <img src="../../../../../assets/images/men.jpg" class="card-img-top" alt="...">
+       <div class="card-body">
+         <h4 class="card-title"><strong>{{c.name}}</strong></h4>
+         <p class="card-text">ALL NEW BRANDS</p>
+         <a href="Javascript.void(0)" routerLink="/product/{{c.id}}" class="card-link">View All Products</a>
+       </div>
+     </div>    </div>
+ 
+     <div *ngIf="c.id==3"class="container mx-auto mt-1">
+      <div class="card" style="width: 18rem;">
+       <img src="../../../../../assets/images/f.jpg" class="card-img-top" alt="...">
+       <div class="card-body">
+         <h4 class="card-title"><strong>{{c.name}}</strong></h4>
+         <p class="card-text">ALL NEW BRANDS</p>
+         <a href="Javascript.void(0)" routerLink="/product/{{c.id}}" class="card-link">View All Products</a>
+       </div>
+     </div>    </div>
+ 
+   

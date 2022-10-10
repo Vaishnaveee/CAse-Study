@@ -1,0 +1,110 @@
+<section>
+
+
+    <div class="row" style="margin-top: 50px; margin-bottom: 50px;">
+
+        <div class="col-2"></div>
+        <div class="col-8">
+
+        <div class="jumbotron bg-cover" style="background-image: linear-gradient(to bottom, rgba(255,255,255,0.6) 0%,rgba(255,255,255,0.9) 100%), url(../../../../assets/images/pay.jpg)">
+                <div class="container">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <b style="font-size: 1cm; font-family:cursive">WELCOME</b>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+           <b style="font-size: 1cm;font-family:cursive">Get Your Wallet Here</b>
+<br><br><br><br>
+
+
+
+        <div class="btn-group" role="group" aria-label="Basic outlined example">
+
+            <div class="btn-group" role="group" aria-label="Basic outlined example">
+
+
+            <div class="btn-group" role="group" aria-label="Basic outlined example">
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+               
+                <button (click)="activateWalletByUserid()" type="button"
+                    class="btn btn-dark">Activate</button>&nbsp;&nbsp;&nbsp;
+                <button (click)="useWalletMoney()" type="button" class="btn btn-dark">Use Wallet
+                    Money{{amount}}</button>&nbsp;&nbsp;&nbsp;
+                <button (click)="checkBalanceByUserid()" type="button" class="btn btn-dark">Check
+                    Balance</button>&nbsp;&nbsp;&nbsp;
+                <button (click)="showAllWallets()" type="button" class="btn btn-dark">Show All
+                    Wallets</button>&nbsp;&nbsp;&nbsp;
+                <button (click)="statementByUserid()" type="button"
+                    class="btn btn-dark">Statement</button>&nbsp;&nbsp;&nbsp;
+                <button (click)="statements()" type="button" class="btn btn-dark">Show All
+                    Statements</button>&nbsp;&nbsp;&nbsp;
+                <button (click)="updateByUserid()" type="button"
+                    class="btn btn-dark">Update</button>&nbsp;&nbsp;&nbsp;
+                <button (click)="deactivateWalletByUserid()" type="button"
+                    class="btn btn-dark">Deactivate</button>&nbsp;&nbsp;&nbsp;
+                <button (click)="pay()" type="button" class="btn btn-dark">pay</button>
+                <input hidden type="text" style=" pointer-events: none;" [value]="amount">
+                <h1 hidden id="wid">{{wid}}</h1>
+            </div>
+
+
+
+        </div>
+        <div class="col-2"></div>
+
+    </div>
+
+
+    <div class="row"  *ngIf="showBal">
+
+        <div class="col-4"></div>
+        <div class="alert alert-success col-4" role="alert" style="text-align: center;">
+            INR<a href="#" class="alert-link"> {{balance}}</a>!
+        </div>
+        <div class="col-4"></div>
+
+    </div>
+
+
+   <div class="row">
+
+    <div class="col-3"></div>
+    <div class="col-6">
+        <div *ngIf="statementList!=null">
+
+            <table class="table">
+                <thead>
+                    <tr class="table-active" *ngFor="let s of statementList">
+                        <td colspan="2" class="table-active">TransactionID</td>
+                        <td colspan="2" class="table-active">Amount Paid</td>
+                        <td colspan="2" class="table-active">Date</td>
+                    </tr>
+                </thead>
+                <tbody>
+                  <tr class="table-active" *ngFor="let s of statementList">
+                    
+                    <td colspan="2" class="table-active">{{s.orderID}}</td>
+                    <td colspan="2" class="table-active">{{s.paid}}</td>
+                    <td colspan="2" class="table-active">{{s.sDate}}</td>
+                  </tr>
+                 
+                </tbody>
+              </table>
+    
+            
+            
+    
+        </div>
+    </div>
+    <div class="col-3"></div>
+
+   </div>
+
+</div>
+</div>

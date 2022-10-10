@@ -1,0 +1,29 @@
+
+<div class="card-body">
+    <form #postProduct="ngForm" (ngSubmit)="onSubmit(postProduct.value)">
+    <label for="exampleFormControlTextarea1" class="form-label">Add Product</label>
+    <label>
+      &nbsp;&nbsp;&nbsp;&nbsp; Category ID :&nbsp;&nbsp;&nbsp;&nbsp;
+      <input type="text" name="catId" ngModel placeholder="catId" required>
+    </label>
+    <label>
+      &nbsp;&nbsp;&nbsp;&nbsp; Product Title :&nbsp;&nbsp;&nbsp;&nbsp;
+      <input type="text" name="title" ngModel placeholder="title" required>
+    </label>
+    <br />
+    <label>
+      &nbsp;&nbsp;&nbsp;&nbsp; Product Price :&nbsp;&nbsp;&nbsp;&nbsp;
+      <input type="text" name="price" ngModel placeholder="price" required>
+    </label>
+    <br /><label>
+      &nbsp;&nbsp;&nbsp;&nbsp; Short Description :&nbsp;&nbsp;&nbsp;&nbsp;
+      <input type="text" name="shortDescription" ngModel placeholder="shortDescription" required>
+    </label>
+    <br /><label>
+      &nbsp;&nbsp;&nbsp;&nbsp; Description:&nbsp;&nbsp;&nbsp;&nbsp;
+      <input type="text" name="description" ngModel placeholder="description" required>
+    </label>
+    <br />
+    <input type="submit" value="post product" >
+  </form>
+  </div>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+	<head>
+
+	  	<meta charset="utf-8">
+      <meta name="google-signin-client_id" content="59923377404-q9h90bdvf7fkumirsfvvo74chbr6uu2j.apps.googleusercontent.com">
+	  	<meta name="viewport" content="width=device-width, initial-scale=1">
+	  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+	  	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.css">
+	  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	  	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+	  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+	  	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	  	<link rel="stylesheet" href="profile-home.component.css">
+	</head>
+	<body>
+
+		<div class="container">
+  					<div class="row">
+  					<div class="col-sm-1">
+  					</div>
+  						<div class="col-sm-3">
+  							<div style="padding-top:70px;">
+
+                <div class="g-signin2"  data-onsuccess="onSignIn" data-width="300" data-height="60" data-longtitle="true"></div>
+  							<!--<a class="btn btn-block btn-social btn-google customBtn " href="/auth" >
+    							<span class="fa fa-google width42px"></span> Sign in with Google
+  							</a>
+                <a class="btn btn-block btn-social btn-facebook customBtn"href="/auth">
+    							<span class="fa fa-facebook width42px"></span> Sign in with Facebook
+  							</a>
+
+  							<a class="btn btn-block btn-social btn-twitter customBtn" href="/auth">
+    							<span class="fa fa-twitter width42px"></span> Sign in with Twitter
+  							</a>
+
+
+  							<a class="btn btn-block btn-social btn-linkedin customBtn" href="/auth/linkedin">
+    							<span class="fa fa-linkedin width42px"></span> Sign in with LinkedIn
+  							</a>-->
+                {{guser | json}}
+  						</div>
+
+  						</div>
+  						<div class="col-sm-1">
+  						<hr>
+  						</div>
+  						<div class="col-sm-5">
+  						<div style="padding-top:15px;">
+							<!-- /login?error=true -->
+
+              <span *ngIf="errorMsg">{{errorMsg}}</span>
+							<form (submit)="onFormSubmit()" [formGroup]="loginForm">
+	  							 <div class="form-group">
+								    <label for="usernameTxt">Username:</label>
+								    <input type="text" class="form-control"  name="username" required formControlName="username">
+								  </div>
+								  <div class="form-group">
+								    <label for="pwd">Password:</label>
+								    <input type="password" class="form-control" name="password" required formControlName="password">
+								  </div>
+								  <div class="d-flex justify-content-between mb-3">
+								    <div class="p-2"><a href="/login"><button type="button" class="btn btn-success">Create Account As User</button></a>
+                    <br>
+                    <div class="p-2"><a href="/admin">New Admin user?</a></div></div>
+
+
+								    <div class="p-2"></div>
+								    <div class="p-2"><input type="submit" name="submit"  value="LOGIN" class="btn btn-info"></div>
+								  </div>
+							  </form>
+  						</div>
+  						<div class="col-sm-2">
+  						</div>
+					</div>
+  				</div>
+		</div>
+
+	</body>
+</html>

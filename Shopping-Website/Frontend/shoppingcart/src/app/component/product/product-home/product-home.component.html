@@ -1,0 +1,94 @@
+<div class="alert alert-primary" role="alert" *ngIf="errorMsg">
+  {{errorMsg}}
+</div>
+
+
+  <div class="card-group">
+    <div class="col-sm-4" *ngFor="let p of products">
+      <div *ngIf="p.id==5"class="container mx-auto mt-3">
+        <div class="card" style="width: 18rem;">
+         <img src="../../../../assets/images/t.jfif" class="card-img-top" alt="...">
+         <div class="card-body">
+          <h5 class="card-title">{{p.title}}</h5>
+          <h5 class="card-text">{{p.shortDescription}}</h5>
+           <p class="card-text">{{p.description}}</p>
+           <h6 class="card-subtitle mb-2 text-muted">Price: {{p.price}}</h6>
+           <a href="Javascript.void(0)" routerLink="/product/review/{{p.id}}" class="card-link">Reviews & Ratings({{p.reviewCount}})</a>
+           <div class="d-flex flex-column mt-4"><a href="/cart"><button  class="btn btn-primary btn-sm" (click)="productByCartId(p.id)" type="button" >Add to Cart{{p.id}}</button></a></div>
+         </div>
+       </div>    </div>
+       <div *ngIf="p.id==6"class="container mx-auto mt-3">
+        <div class="card" style="width: 18rem;">
+         <img src="../../../../assets/images/tt.jfif" class="card-img-top" alt="...">
+         <div class="card-body">
+          <h5 class="card-title">{{p.title}}</h5>
+          <h5 class="card-text">{{p.shortDescription}}</h5>
+           <p class="card-text">{{p.description}}</p>
+           <h6 class="card-subtitle mb-2 text-muted">Price: {{p.price}}</h6>
+           <a href="Javascript.void(0)" routerLink="/product/review/{{p.id}}" class="card-link">Reviews & Ratings({{p.reviewCount}})</a>
+           <div class="d-flex flex-column mt-4"><a href="/cart"><button  class="btn btn-primary btn-sm" (click)="productByCartId(p.id)" type="button" >Add to Cart{{p.id}}</button></a></div>
+         </div>
+       </div>    </div>
+     <div *ngIf="p.id==7"class="container mx-auto mt-3">
+    <div class="card" style="width: 18rem;">
+     <img src="../../../../assets/images/s.jfif" class="card-img-top" alt="...">
+     <div class="card-body">
+      <h5 class="card-title">{{p.title}}</h5>
+      <h5 class="card-text">{{p.shortDescription}}</h5>
+       <p class="card-text">{{p.description}}</p>
+       <h6 class="card-subtitle mb-2 text-muted">Price: {{p.price}}</h6>
+       <a href="Javascript.void(0)" routerLink="/product/review/{{p.id}}" class="card-link">Reviews & Ratings({{p.reviewCount}})</a>
+       <div class="d-flex flex-column mt-4"><a href="/cart"><button  class="btn btn-primary btn-sm" (click)="productByCartId(p.id)" type="button" >Add to Cart{{p.id}}</button></a></div>
+     </div>
+   </div>    </div>
+
+
+     <div *ngIf="p.id==8"class="container mx-auto mt-3">
+    <div class="card" style="width: 18rem;">
+     <img src="../../../../assets/images/ss.webp" class="card-img-top" alt="...">
+     <div class="card-body">
+      <h5 class="card-title">{{p.title}}</h5>
+      <h5 class="card-text">{{p.shortDescription}}</h5>
+       <p class="card-text">{{p.description}}</p>
+       <h6 class="card-subtitle mb-2 text-muted">Price: {{p.price}}</h6>
+       <a href="Javascript.void(0)" routerLink="/product/review/{{p.id}}" class="card-link">Reviews & Ratings({{p.reviewCount}})</a>
+       <div class="d-flex flex-column mt-4"><a href="/cart"><button  class="btn btn-primary btn-sm" (click)="productByCartId(p.id)" type="button" >Add to Cart{{p.id}}</button></a></div>
+     </div>
+   </div>    </div>
+
+   <div *ngIf="p.id==10"class="container mx-auto mt-3">
+    <div class="card" style="width: 18rem;">
+     <img src="../../../../assets/images/b.jfif" class="card-img-top" alt="...">
+     <div class="card-body">
+      <h5 class="card-title">{{p.title}}</h5>
+      <h5 class="card-text">{{p.shortDescription}}</h5>
+       <p class="card-text">{{p.description}}</p>
+       <h6 class="card-subtitle mb-2 text-muted">Price: {{p.price}}</h6>
+       <a href="Javascript.void(0)" routerLink="/product/review/{{p.id}}" class="card-link">Reviews & Ratings({{p.reviewCount}})</a>
+       <div class="d-flex flex-column mt-4"><a href="/cart"><button  class="btn btn-primary btn-sm" (click)="productByCartId(p.id)" type="button" >Add to Cart{{p.id}}</button></a></div>
+     </div>
+   </div>    </div>
+   <div *ngIf="p.id==11"class="container mx-auto mt-3">
+    <div class="card" style="width: 18rem;">
+     <img src="../../../../assets/images/sofa.jfif" class="card-img-top" alt="...">
+     <div class="card-body">
+      <h5 class="card-title">{{p.title}}</h5>
+      <h5 class="card-text">{{p.shortDescription}}</h5>
+       <p class="card-text">{{p.description}}</p>
+       <h6 class="card-subtitle mb-2 text-muted">Price: {{p.price}}</h6>
+       <a href="Javascript.void(0)" routerLink="/product/review/{{p.id}}" class="card-link">Reviews & Ratings({{p.reviewCount}})</a>
+       <div class="d-flex flex-column mt-4"><a href="/cart"><button  class="btn btn-primary btn-sm" (click)="productByCartId(p.id)" type="button" >Add to Cart{{p.id}}</button></a></div>
+     </div>
+   </div>    </div>
+   <div *ngIf="p.id==17"class="container mx-auto mt-3">
+    <div class="card" style="width: 18rem;">
+     <img src="../../../../assets/images/sofa.jfif" class="card-img-top" alt="...">
+     <div class="card-body">
+      <h5 class="card-title">{{p.title}}</h5>
+      <h5 class="card-text">{{p.shortDescription}}</h5>
+       <p class="card-text">{{p.description}}</p>
+       <h6 class="card-subtitle mb-2 text-muted">Price: {{p.price}}</h6>
+       <a href="Javascript.void(0)" routerLink="/product/review/{{p.id}}" class="card-link">Reviews & Ratings({{p.reviewCount}})</a>
+       <div class="d-flex flex-column mt-4"><a href="/cart"><button  class="btn btn-primary btn-sm" (click)="productByCartId(p.id)" type="button" >Add to Cart{{p.id}}</button></a></div>
+     </div>
+   </div>    </div>

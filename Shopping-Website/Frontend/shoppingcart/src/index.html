@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Angularproject</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <meta name="google-signin-client_id" content="59923377404-q9h90bdvf7fkumirsfvvo74chbr6uu2j.apps.googleusercontent.com">
+   <script src="https://apis.google.com/js/platform.js"></script>
+
+
+
+
+   
+
+
+
+  <script src="./src/assets/script.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">  </script> 
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>   
+<script
+src="https://code.jquery.com/jquery-3.6.1.min.js"
+integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
+crossorigin="anonymous"></script>
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+  
+
+
+
+
+
+    <script>
+    
+    
+        const paymentStart = (as) => {
+        console. log ( "payment started. . ") ;
+        
+        var amount = $("input:text").val() ;
+        var wid = $("#wid").text() ;
+	    console.log (wid);
+        
+        $.ajax(
+            {
+                url:'http://localhost:1005/wallet/pay/'+wid,
+                data:JSON.stringify({  amount:  amount, info: 'order_request'}),
+                contentType: 'application/json',
+                type: 'POST',
+                dataType: 'json',
+                success:function (a){
+                    console.log("ankush");
+                    if (a.status == "created") {
+                        console.log("ankush");
+                        let options={
+                            key: 'rzp_test_5iFl5ItRej5fop',
+                            amount: a.amount,
+                            Currency: "INR",
+                            name: " Smart Contact Manager",
+                            description: "Donation ",
+                            image:"https://th.bing.com/th/id/OIP.-fmOZ6VFYz5SnqTSZhEv8wHaE8?pid=ImgDet&w=900&h=600&rs=1",
+                            order_id: a.id,
+                            handler:function (a) {
+                            console. log (a.razorpay_payement_id)
+                            console. log ( a.razorpay_order_id)
+                            console. log (razorpay_signature)
+                            console. log (a.id)
+                            console.log ( ' payment successful !!')
+                            alert("congrates !! Payment successful !!")
+                            },
+    
+                            prefill: { name: "", email: "", contact: "" }, 
+                            notes: { address: "Razorpay Corporate Office"}
+                            ,
+                            theme: { color: "#3399cc"}
+    
+                        };
+    
+                        let rzp = new Razorpay(options) ;
+                        
+                        rzp.on ( "payment.failed", function (response) {
+                        console. log(response.error. code) ;
+                        console. log (response.error.description)
+                        console. log (response. error. source) ;
+                        console. log(response.error. step) ;
+                        console. log(response.error. reason ) ;
+                        console. log ( response. error.metadata.order_id);
+                        console. log ( response.error.metadata.payment_id);
+                        alert("Oops payment failed !!");
+                        });
+    
+                        rzp.open();
+    
+                    }
+    
+                },
+                //invoked wh success
+                error:function (error) {
+                    console.log (error+"erorrrr")
+                    alert("something went wrong !!"+error)
+                }
+                //invoked when error
+
+               
+    
+            }
+        )
+    
+    
+    };</script>
+ </head>
+<body>
+    
+  <app-root></app-root>
+</body>
+</html>
